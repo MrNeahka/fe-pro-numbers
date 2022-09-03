@@ -8,19 +8,7 @@
  * @returns {number}
  */
 export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
-  let min;
-  let max;
-  if(minFirst > minSecond){
-    min = minSecond;
-  }else {
-    min = minFirst;
-  }
-  if (maxFirst > maxSecond){
-    max = maxFirst;
-  }else {
-    max = maxSecond;
-  }
-  return min*max;
+  return Math.min(minFirst, minSecond) * Math.max(maxFirst, maxSecond);
 };
 
 /**
@@ -70,10 +58,5 @@ export const getFlooroCeil = (number) => {
  * @returns {number}
  */
 export const randomizer = (from, to) => {
-  let rand = Math.ceil(Math.random() * to);
-  if (rand < from){
-    return from;
-  }else {
-    return rand;
-  }
+  return Math.floor(from + Math.random() * (to - from + 1));
 };
